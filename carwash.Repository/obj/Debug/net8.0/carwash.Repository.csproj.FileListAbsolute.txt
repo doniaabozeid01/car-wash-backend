@@ -1,0 +1,15 @@
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\bin\Debug\net8.0\carwash.Repository.deps.json
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\bin\Debug\net8.0\carwash.Repository.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\bin\Debug\net8.0\carwash.Repository.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\bin\Debug\net8.0\carwash.Data.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\bin\Debug\net8.0\carwash.Data.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.csproj.AssemblyReference.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.AssemblyInfoInputs.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.AssemblyInfo.cs
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.csproj.CopyComplete
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\refint\carwash.Repository.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\ref\carwash.Repository.dll
