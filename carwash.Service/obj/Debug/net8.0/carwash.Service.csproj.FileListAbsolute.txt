@@ -13,3 +13,4 @@ C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Debug\net8.0\carwash.Se
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Debug\net8.0\refint\carwash.Service.dll
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Debug\net8.0\carwash.Service.pdb
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Debug\net8.0\ref\carwash.Service.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Debug\net8.0\carwash.Service.sourcelink.json

@@ -12,3 +12,4 @@ C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Debug\net8.0\refint\carwas
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Debug\net8.0\carwash.Data.pdb
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Debug\net8.0\carwash.Data.genruntimeconfig.cache
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Debug\net8.0\ref\carwash.Data.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Debug\net8.0\carwash.Data.sourcelink.json

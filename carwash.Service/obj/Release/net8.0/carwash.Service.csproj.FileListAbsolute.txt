@@ -1,0 +1,16 @@
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\bin\Release\net8.0\carwash.Service.deps.json
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\bin\Release\net8.0\carwash.Service.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\bin\Release\net8.0\carwash.Service.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\bin\Release\net8.0\carwash.Data.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\bin\Release\net8.0\carwash.Data.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.csproj.AssemblyReference.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.AssemblyInfoInputs.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.AssemblyInfo.cs
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.csproj.CoreCompileInputs.cache
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.sourcelink.json
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.csproj.CopyComplete
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\refint\carwash.Service.dll
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.pdb
+C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\ref\carwash.Service.dll

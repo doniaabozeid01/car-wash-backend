@@ -79,6 +79,16 @@ public class Program
         builder.Services.AddSignalR();
         builder.Services.AddScoped<IPointsNotifier, SignalRPointsNotifier>();
         builder.Services.AddApplicationServices();
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AngularClient", policy =>
+            {
+                policy.WithOrigins("http://localhost:4200", "https://car-wash-psi-rosy.vercel.app")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            });
+        });
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
@@ -121,6 +131,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+        app.UseCors("AngularClient");
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
