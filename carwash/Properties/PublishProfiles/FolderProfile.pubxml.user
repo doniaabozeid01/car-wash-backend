@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <History>True|2026-06-28T21:02:19.7649486Z;True|2026-06-28T23:38:00.9049189+03:00;True|2026-06-28T23:30:33.9573452+03:00;False|2026-06-28T23:30:22.0696690+03:00;</History>
+    <History>True|2026-06-29T07:57:50.2006434Z||;True|2026-06-28T23:02:19.7649486+02:00||;True|2026-06-28T22:38:00.9049189+02:00||;True|2026-06-28T22:30:33.9573452+02:00||;False|2026-06-28T22:30:22.0696690+02:00||;</History>
     <LastFailureDetails />
-    <_PublishTargetUrl>C:\Users\pc\faculty\car-wash\publish</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\Full car\Publish</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

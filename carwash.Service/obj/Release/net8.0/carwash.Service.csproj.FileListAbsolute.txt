@@ -14,3 +14,19 @@ C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\refint\carwash.Service.dll
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\carwash.Service.pdb
 C:\Users\pc\faculty\car-wash\carwash\carwash.Service\obj\Release\net8.0\ref\carwash.Service.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\bin\Release\net8.0\carwash.Service.deps.json
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\bin\Release\net8.0\carwash.Service.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\bin\Release\net8.0\carwash.Service.pdb
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\bin\Release\net8.0\carwash.Data.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\bin\Release\net8.0\carwash.Data.pdb
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.csproj.AssemblyReference.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.AssemblyInfoInputs.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.AssemblyInfo.cs
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.csproj.CoreCompileInputs.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.sourcelink.json
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash..46929875.Up2Date
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\refint\carwash.Service.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\carwash.Service.pdb
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Service\obj\Release\net8.0\ref\carwash.Service.dll

@@ -13,3 +13,18 @@ C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Release\net8.0\refint\carw
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Release\net8.0\carwash.Data.pdb
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Release\net8.0\carwash.Data.genruntimeconfig.cache
 C:\Users\pc\faculty\car-wash\carwash\carwash.Data\obj\Release\net8.0\ref\carwash.Data.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\bin\Release\net8.0\carwash.Data.deps.json
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\bin\Release\net8.0\carwash.Data.runtimeconfig.json
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\bin\Release\net8.0\carwash.Data.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\bin\Release\net8.0\carwash.Data.pdb
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.csproj.AssemblyReference.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.AssemblyInfoInputs.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.AssemblyInfo.cs
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.csproj.CoreCompileInputs.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.sourcelink.json
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\refint\carwash.Data.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.pdb
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\carwash.Data.genruntimeconfig.cache
+E:\Full car\car-wash-backend\car-wash-backend\carwash.Data\obj\Release\net8.0\ref\carwash.Data.dll

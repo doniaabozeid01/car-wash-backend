@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\Full car\\car-wash-backend\\car-wash-backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\carwash.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\carwash.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6ECDFDD1-87A0-44CD-B762-4576969ECEE9}|carwash.Service\\carwash.Service.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash.service\\dtos\\points\\pointsactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,7 +60,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "carwash.csproj",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\carwash.csproj",
               "RelativeDocumentMoniker": "carwash\\carwash.csproj",
@@ -96,21 +96,19 @@
               "RelativeToolTip": "carwash\\carwash.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-29T07:23:24.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T07:23:24.363Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Program.cs",
               "RelativeDocumentMoniker": "carwash\\Program.cs",
               "ToolTip": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Program.cs",
               "RelativeToolTip": "carwash\\Program.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAowKMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAgwGoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T07:23:24.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T07:23:24.512Z"
             },
             {
               "$type": "Document",
@@ -150,15 +148,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\appsettings.json",
               "RelativeDocumentMoniker": "carwash\\appsettings.json",
               "ToolTip": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\appsettings.json",
               "RelativeToolTip": "carwash\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-29T07:23:24.52Z"
+              "WhenOpened": "2026-06-29T07:23:24.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

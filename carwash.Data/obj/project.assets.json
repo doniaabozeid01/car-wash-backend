@@ -4179,17 +4179,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\AppData\\Local\\Temp\\cursor-sandbox-cache\\9f5f71d93a2e2278379c67a6f3ec118d\\nuget": {},
+    "C:\\Users\\pc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\carwash.Data.csproj",
+      "projectUniqueName": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\carwash.Data.csproj",
       "projectName": "carwash.Data",
-      "projectPath": "e:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\carwash.Data.csproj",
-      "packagesPath": "C:\\Users\\pc\\AppData\\Local\\Temp\\cursor-sandbox-cache\\9f5f71d93a2e2278379c67a6f3ec118d\\nuget",
-      "outputPath": "e:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\obj\\",
+      "projectPath": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\carwash.Data.csproj",
+      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+      "outputPath": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
