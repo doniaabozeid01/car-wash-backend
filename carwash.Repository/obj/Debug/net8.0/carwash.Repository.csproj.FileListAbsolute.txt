@@ -14,3 +14,19 @@ C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\refint\
 C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.pdb
 C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\ref\carwash.Repository.dll
 C:\Users\pc\faculty\car-wash\carwash\carwash.Repository\obj\Debug\net8.0\carwash.Repository.sourcelink.json
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\bin\Debug\net8.0\carwash.Repository.deps.json
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\bin\Debug\net8.0\carwash.Repository.dll
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\bin\Debug\net8.0\carwash.Repository.pdb
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\bin\Debug\net8.0\carwash.Data.dll
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\bin\Debug\net8.0\carwash.Data.pdb
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.csproj.AssemblyReference.cache
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.GeneratedMSBuildEditorConfig.editorconfig
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.AssemblyInfoInputs.cache
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.AssemblyInfo.cs
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.csproj.CoreCompileInputs.cache
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.sourcelink.json
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash..AEDC4B5C.Up2Date
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.dll
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\refint\carwash.Repository.dll
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\carwash.Repository.pdb
+e:\Full car\car-wash-backend\car-wash-backend\carwash.Repository\obj\Debug\net8.0\ref\carwash.Repository.dll

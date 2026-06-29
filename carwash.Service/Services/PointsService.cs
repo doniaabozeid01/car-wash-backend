@@ -39,7 +39,16 @@ public class PointsService : IPointsService
         }
 
         var change = PointsActionValues.GetChange(request.Action);
-        user.Points = Math.Max(0, user.Points + change);
+
+        if (change < 0 && user.Points + change < 0)
+        {
+            var required = Math.Abs(change);
+            var remaining = required - user.Points;
+            return ServiceResult<ScannedUserDto>.Fail(
+                $"Insufficient points. You still need {remaining} more points to redeem {required} points.");
+        }
+
+        user.Points += change;
 
         var updateResult = await _userManager.UpdateAsync(user);
         if (!updateResult.Succeeded)
