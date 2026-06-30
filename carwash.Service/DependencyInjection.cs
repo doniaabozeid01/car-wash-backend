@@ -13,6 +13,7 @@ public static class DependencyInjection
         services.AddScoped<IUserCarService, UserCarService>();
         services.AddScoped<IWashServicesService, WashServicesService>();
         services.AddScoped<IWashRecordService, WashRecordService>();
+        services.AddScoped<IUserService, UserService>();
         services.AddSingleton<IQrCodeService, QrCodeService>();
 
         return services;
