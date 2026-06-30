@@ -312,3 +312,4 @@ E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\refint\ca
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.pdb
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.genruntimeconfig.cache
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\ref\carwash.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

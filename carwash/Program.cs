@@ -83,7 +83,7 @@ public class Program
         {
             options.AddPolicy("AngularClient", policy =>
             {
-                policy.WithOrigins("http://localhost:4200", "https://car-wash-psi-rosy.vercel.app")
+                policy.WithOrigins("http://localhost:4200", "https://full-cars.vercel.app")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();

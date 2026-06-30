@@ -10,6 +10,9 @@ public static class DependencyInjection
     {
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IPointsService, PointsService>();
+        services.AddScoped<IUserCarService, UserCarService>();
+        services.AddScoped<IWashServicesService, WashServicesService>();
+        services.AddScoped<IWashRecordService, WashRecordService>();
         services.AddSingleton<IQrCodeService, QrCodeService>();
 
         return services;

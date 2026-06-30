@@ -4,6 +4,7 @@ using System.Text;
 using carwash.Data.Constants;
 using carwash.Data.Entities;
 using carwash.Service.DTOs.Auth;
+using carwash.Service.DTOs.Cars;
 using carwash.Service.DTOs.Common;
 using carwash.Service.Interfaces;
 using carwash.Service.Settings;
@@ -18,17 +19,20 @@ public class AuthService : IAuthService
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly IQrCodeService _qrCodeService;
+    private readonly IUserCarService _userCarService;
     private readonly JwtSettings _jwtSettings;
 
     public AuthService(
         UserManager<ApplicationUser> userManager,
         SignInManager<ApplicationUser> signInManager,
         IQrCodeService qrCodeService,
+        IUserCarService userCarService,
         IOptions<JwtSettings> jwtSettings)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _qrCodeService = qrCodeService;
+        _userCarService = userCarService;
         _jwtSettings = jwtSettings.Value;
     }
 
@@ -53,7 +57,6 @@ public class AuthService : IAuthService
             UserName = request.PhoneNumber,
             PhoneNumber = request.PhoneNumber,
             FullName = request.FullName,
-            Points = 0,
             QrCode = isUser ? Guid.NewGuid().ToString("N") : null,
             PhoneNumberConfirmed = true
         };
@@ -121,16 +124,23 @@ public class AuthService : IAuthService
         var role = roles.FirstOrDefault() ?? string.Empty;
         var isUser = role == Roles.User;
 
+        IReadOnlyList<UserCarDto>? cars = null;
+        if (isUser)
+        {
+            var carsResult = await _userCarService.GetAllAsync(user.Id);
+            cars = carsResult.Success ? carsResult.Data : [];
+        }
+
         return new UserProfileDto
         {
             Id = user.Id,
             FullName = user.FullName,
             PhoneNumber = user.PhoneNumber ?? string.Empty,
             Role = role,
-            Points = isUser ? user.Points : null,
             QrCodeBase64 = isUser && !string.IsNullOrEmpty(user.QrCode)
                 ? _qrCodeService.GenerateBase64(user.QrCode)
-                : null
+                : null,
+            Cars = cars
         };
     }
 
