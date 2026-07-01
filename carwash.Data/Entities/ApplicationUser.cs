@@ -6,5 +6,6 @@ public class ApplicationUser : IdentityUser
 {
     public string FullName { get; set; } = string.Empty;
     public string? QrCode { get; set; }
+    public DateTime CreatedAt { get; set; }
     public ICollection<UserCar> Cars { get; set; } = [];
 }

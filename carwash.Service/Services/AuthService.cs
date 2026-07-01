@@ -58,7 +58,8 @@ public class AuthService : IAuthService
             PhoneNumber = request.PhoneNumber,
             FullName = request.FullName,
             QrCode = isUser ? Guid.NewGuid().ToString("N") : null,
-            PhoneNumberConfirmed = true
+            PhoneNumberConfirmed = true,
+            CreatedAt = DateTime.UtcNow
         };
 
         var createResult = await _userManager.CreateAsync(user, request.Password);

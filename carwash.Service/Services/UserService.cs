@@ -26,12 +26,24 @@ public class UserService : IUserService
         int? month = null,
         int? day = null)
     {
-        HashSet<string>? activeUserIds = null;
-        var shouldFilterByActivity = activeOnly || year.HasValue || month.HasValue || day.HasValue;
+        var hasDateFilter = year.HasValue || month.HasValue || day.HasValue;
 
-        if (shouldFilterByActivity)
+        var customers = await _userManager.GetUsersInRoleAsync(Roles.User);
+        var cashierIds = (await _userManager.GetUsersInRoleAsync(Roles.Cashier))
+            .Select(u => u.Id)
+            .ToHashSet();
+
+        IEnumerable<ApplicationUser> filtered = customers
+            .Where(u => !cashierIds.Contains(u.Id))
+            .Where(u => !string.IsNullOrEmpty(u.QrCode));
+
+        if (activeOnly || hasDateFilter)
         {
-            var rangeResult = ResolveDateRange(year, month, day, activeOnly);
+            var rangeResult = ResolveDateRange(
+                year,
+                month,
+                day,
+                defaultToCurrentMonth: activeOnly && !hasDateFilter);
             if (!rangeResult.Success)
             {
                 return ServiceResult<IReadOnlyList<CustomerDto>>.Fail(rangeResult.Error!);
@@ -39,22 +51,21 @@ public class UserService : IUserService
 
             var (from, to) = rangeResult.Data;
 
-            var activeUserIdList = await _dbContext.WashRecords
-                .AsNoTracking()
-                .Where(r => r.CreatedAt >= from && r.CreatedAt < to)
-                .Select(r => r.UserId)
-                .Distinct()
-                .ToListAsync();
+            if (activeOnly)
+            {
+                var activeUserIds = (await _dbContext.WashRecords
+                    .AsNoTracking()
+                    .Where(r => r.CreatedAt >= from && r.CreatedAt < to)
+                    .Select(r => r.UserId)
+                    .Distinct()
+                    .ToListAsync()).ToHashSet();
 
-            activeUserIds = activeUserIdList.ToHashSet();
-        }
-
-        var customers = await _userManager.GetUsersInRoleAsync(Roles.User);
-
-        IEnumerable<ApplicationUser> filtered = customers;
-        if (activeUserIds is not null)
-        {
-            filtered = customers.Where(u => activeUserIds.Contains(u.Id));
+                filtered = filtered.Where(u => activeUserIds.Contains(u.Id));
+            }
+            else
+            {
+                filtered = filtered.Where(u => u.CreatedAt >= from && u.CreatedAt < to);
+            }
         }
 
         var result = filtered
@@ -106,7 +117,7 @@ public class UserService : IUserService
         int? year,
         int? month,
         int? day,
-        bool activeOnly)
+        bool defaultToCurrentMonth = false)
     {
         var now = DateTime.UtcNow;
 
@@ -130,7 +141,7 @@ public class UserService : IUserService
             return GetYearRange(year.Value);
         }
 
-        if (activeOnly)
+        if (defaultToCurrentMonth)
         {
             return GetMonthRange(now.Year, now.Month);
         }

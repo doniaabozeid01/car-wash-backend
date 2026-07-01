@@ -23,6 +23,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         {
             entity.Property(u => u.FullName).HasMaxLength(100).IsRequired();
             entity.Property(u => u.QrCode).HasMaxLength(100);
+            entity.HasIndex(u => u.CreatedAt);
             entity.HasIndex(u => u.QrCode)
                 .IsUnique()
                 .HasFilter("[QrCode] IS NOT NULL");

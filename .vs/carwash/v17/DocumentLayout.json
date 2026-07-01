@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "E:\\Full car\\car-wash-backend\\car-wash-backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6ECDFDD1-87A0-44CD-B762-4576969ECEE9}|carwash.Service\\carwash.Service.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ECDFDD1-87A0-44CD-B762-4576969ECEE9}|carwash.Service\\carwash.Service.csproj|solutionrelative:carwash.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ABDD691D-5E0B-4699-B3C8-69FF21CFF319}|carwash.Data\\carwash.Data.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash.data\\entities\\carsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABDD691D-5E0B-4699-B3C8-69FF21CFF319}|carwash.Data\\carwash.Data.csproj|solutionrelative:carwash.data\\entities\\carsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\controllers\\washrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\controllers\\washrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|solutionrelative:carwash\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05492F84-16F6-43DF-86DC-1CAB03084F25}|carwash\\carwash.csproj|e:\\full car\\car-wash-backend\\car-wash-backend\\carwash\\controllers\\pointscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -116,6 +120,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "carwash.Service\\Services\\UserService.cs",
+              "ToolTip": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Service\\Services\\UserService.cs",
+              "RelativeToolTip": "carwash.Service\\Services\\UserService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAIAwwBsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:45:14.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CarSize.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\Entities\\CarSize.cs",
               "RelativeDocumentMoniker": "carwash.Data\\Entities\\CarSize.cs",
@@ -128,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "WashRecordsController.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\WashRecordsController.cs",
               "RelativeDocumentMoniker": "carwash\\Controllers\\WashRecordsController.cs",
@@ -136,25 +153,24 @@
               "RelativeToolTip": "carwash\\Controllers\\WashRecordsController.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T15:29:30.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-01T15:29:30.301Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UsersController.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "carwash\\Controllers\\UsersController.cs",
               "ToolTip": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\UsersController.cs",
               "RelativeToolTip": "carwash\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-01T15:29:24.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ApplyPointsRequest.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Service\\DTOs\\Points\\ApplyPointsRequest.cs",
               "RelativeDocumentMoniker": "carwash.Service\\DTOs\\Points\\ApplyPointsRequest.cs",
@@ -162,12 +178,11 @@
               "RelativeToolTip": "carwash.Service\\DTOs\\Points\\ApplyPointsRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T14:04:27.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T14:04:27.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "waseela.json",
               "DocumentMoniker": "C:\\Users\\pc\\Downloads\\waseela.json",
               "ToolTip": "C:\\Users\\pc\\Downloads\\waseela.json",
@@ -177,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CarsController.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\CarsController.cs",
               "RelativeDocumentMoniker": "carwash\\Controllers\\CarsController.cs",
@@ -185,12 +200,11 @@
               "RelativeToolTip": "carwash\\Controllers\\CarsController.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAowCYAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T09:04:03.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T09:04:03.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Roles.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\Constants\\Roles.cs",
               "RelativeDocumentMoniker": "carwash.Data\\Constants\\Roles.cs",
@@ -202,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "carwash.Data.csproj",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\carwash.Data.csproj",
               "RelativeDocumentMoniker": "carwash.Data\\carwash.Data.csproj",
@@ -214,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "carwash.csproj",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\carwash.csproj",
               "RelativeDocumentMoniker": "carwash\\carwash.csproj",
@@ -226,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Program.cs",
               "RelativeDocumentMoniker": "carwash\\Program.cs",
@@ -234,12 +248,11 @@
               "RelativeToolTip": "carwash\\Program.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAgwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T07:23:24.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T07:23:24.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "carwash\\Controllers\\AuthController.cs",
@@ -251,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PointsController.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Controllers\\PointsController.cs",
               "RelativeDocumentMoniker": "carwash\\Controllers\\PointsController.cs",
@@ -259,12 +272,11 @@
               "RelativeToolTip": "carwash\\Controllers\\PointsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T07:23:24.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T07:23:24.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\appsettings.json",
               "RelativeDocumentMoniker": "carwash\\appsettings.json",
@@ -276,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SignalRPointsNotifier.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Services\\SignalRPointsNotifier.cs",
               "RelativeDocumentMoniker": "carwash\\Services\\SignalRPointsNotifier.cs",
@@ -288,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PointsHub.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\Hubs\\PointsHub.cs",
               "RelativeDocumentMoniker": "carwash\\Hubs\\PointsHub.cs",
@@ -300,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "20260627182937_MakeQrCodeOptionalForCashier.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\Migrations\\20260627182937_MakeQrCodeOptionalForCashier.cs",
               "RelativeDocumentMoniker": "carwash.Data\\Migrations\\20260627182937_MakeQrCodeOptionalForCashier.cs",
@@ -312,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "20260627182836_updateQrToOptional.cs",
               "DocumentMoniker": "C:\\Users\\pc\\faculty\\car-wash\\carwash\\carwash.Data\\Migrations\\20260627182836_updateQrToOptional.cs",
               "ToolTip": "C:\\Users\\pc\\faculty\\car-wash\\carwash\\carwash.Data\\Migrations\\20260627182836_updateQrToOptional.cs",
@@ -322,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -332,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "20260627181157_addAuth.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\Migrations\\20260627181157_addAuth.cs",
               "RelativeDocumentMoniker": "carwash.Data\\Migrations\\20260627181157_addAuth.cs",
@@ -344,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Data\\Entities\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "carwash.Data\\Entities\\ApplicationUser.cs",
