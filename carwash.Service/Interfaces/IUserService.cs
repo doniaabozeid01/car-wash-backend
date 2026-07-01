@@ -8,5 +8,8 @@ public interface IUserService
     Task<ServiceResult<IReadOnlyList<CustomerDto>>> GetCustomersAsync(
         bool activeOnly = false,
         int? year = null,
-        int? month = null);
+        int? month = null,
+        int? day = null);
+
+    Task<ServiceResult<bool>> DeleteCustomerAsync(string userId);
 }

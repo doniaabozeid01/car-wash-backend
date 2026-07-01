@@ -22,18 +22,22 @@ public class WashRecordsController : ControllerBase
     public async Task<IActionResult> GetRecords(
         [FromQuery] int year,
         [FromQuery] int month,
+        [FromQuery] int? day = null,
         [FromQuery] string? userId = null,
         [FromQuery] int? carId = null,
         [FromQuery] int? washServiceId = null)
     {
-        var result = await _washRecordService.GetRecordsAsync(year, month, userId, carId, washServiceId);
+        var result = await _washRecordService.GetRecordsAsync(year, month, day, userId, carId, washServiceId);
         return ToActionResult(result);
     }
 
     [HttpGet("stats")]
-    public async Task<IActionResult> GetMonthlyStats([FromQuery] int year, [FromQuery] int month)
+    public async Task<IActionResult> GetMonthlyStats(
+        [FromQuery] int year,
+        [FromQuery] int month,
+        [FromQuery] int? day = null)
     {
-        var result = await _washRecordService.GetMonthlyStatsAsync(year, month);
+        var result = await _washRecordService.GetMonthlyStatsAsync(year, month, day);
         return ToActionResult(result);
     }
 

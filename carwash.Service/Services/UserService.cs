@@ -23,17 +23,15 @@ public class UserService : IUserService
     public async Task<ServiceResult<IReadOnlyList<CustomerDto>>> GetCustomersAsync(
         bool activeOnly = false,
         int? year = null,
-        int? month = null)
+        int? month = null,
+        int? day = null)
     {
         HashSet<string>? activeUserIds = null;
+        var shouldFilterByActivity = activeOnly || year.HasValue || month.HasValue || day.HasValue;
 
-        if (activeOnly)
+        if (shouldFilterByActivity)
         {
-            var now = DateTime.UtcNow;
-            var targetYear = year ?? now.Year;
-            var targetMonth = month ?? now.Month;
-
-            var rangeResult = GetMonthRange(targetYear, targetMonth);
+            var rangeResult = ResolveDateRange(year, month, day, activeOnly);
             if (!rangeResult.Success)
             {
                 return ServiceResult<IReadOnlyList<CustomerDto>>.Fail(rangeResult.Error!);
@@ -70,6 +68,113 @@ public class UserService : IUserService
             .ToList();
 
         return ServiceResult<IReadOnlyList<CustomerDto>>.Ok(result);
+    }
+
+    public async Task<ServiceResult<bool>> DeleteCustomerAsync(string userId)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return ServiceResult<bool>.Fail("User not found.");
+        }
+
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user is null)
+        {
+            return ServiceResult<bool>.Fail("User not found.");
+        }
+
+        var roles = await _userManager.GetRolesAsync(user);
+        if (!roles.Contains(Roles.User))
+        {
+            return ServiceResult<bool>.Fail("Only customer accounts can be deleted.");
+        }
+
+        await _dbContext.WashRecords
+            .Where(r => r.UserId == userId)
+            .ExecuteDeleteAsync();
+
+        var deleteResult = await _userManager.DeleteAsync(user);
+        if (!deleteResult.Succeeded)
+        {
+            return ServiceResult<bool>.Fail(deleteResult.Errors.Select(e => e.Description));
+        }
+
+        return ServiceResult<bool>.Ok(true);
+    }
+
+    private static ServiceResult<(DateTime From, DateTime To)> ResolveDateRange(
+        int? year,
+        int? month,
+        int? day,
+        bool activeOnly)
+    {
+        var now = DateTime.UtcNow;
+
+        if (day.HasValue)
+        {
+            if (!year.HasValue || !month.HasValue)
+            {
+                return ServiceResult<(DateTime, DateTime)>.Fail("Year and month are required when day is specified.");
+            }
+
+            return GetDayRange(year.Value, month.Value, day.Value);
+        }
+
+        if (month.HasValue)
+        {
+            return GetMonthRange(year ?? now.Year, month.Value);
+        }
+
+        if (year.HasValue)
+        {
+            return GetYearRange(year.Value);
+        }
+
+        if (activeOnly)
+        {
+            return GetMonthRange(now.Year, now.Month);
+        }
+
+        return ServiceResult<(DateTime, DateTime)>.Fail("Invalid date range.");
+    }
+
+    private static ServiceResult<(DateTime From, DateTime To)> GetYearRange(int year)
+    {
+        if (year < 2000 || year > 9999)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid year.");
+        }
+
+        var from = new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        return ServiceResult<(DateTime, DateTime)>.Ok((from, from.AddYears(1)));
+    }
+
+    private static ServiceResult<(DateTime From, DateTime To)> GetDayRange(int year, int month, int day)
+    {
+        if (year < 2000 || year > 9999)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid year.");
+        }
+
+        if (month is < 1 or > 12)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid month.");
+        }
+
+        if (day is < 1 or > 31)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid day.");
+        }
+
+        try
+        {
+            var from = new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc);
+            return ServiceResult<(DateTime, DateTime)>.Ok((from, from.AddDays(1)));
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid date.");
+        }
     }
 
     private static ServiceResult<(DateTime From, DateTime To)> GetMonthRange(int year, int month)

@@ -22,17 +22,38 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> GetAll(
         [FromQuery] bool activeOnly = false,
         [FromQuery] int? year = null,
-        [FromQuery] int? month = null)
+        [FromQuery] int? month = null,
+        [FromQuery] int? day = null)
     {
-        var result = await _userService.GetCustomersAsync(activeOnly, year, month);
+        var result = await _userService.GetCustomersAsync(activeOnly, year, month, day);
         return ToActionResult(result);
     }
 
-    private IActionResult ToActionResult<T>(ServiceResult<T> result)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var result = await _userService.DeleteCustomerAsync(id);
+        return ToActionResult(result, StatusCodes.Status404NotFound, StatusCodes.Status204NoContent);
+    }
+
+    private IActionResult ToActionResult<T>(
+        ServiceResult<T> result,
+        int notFoundStatusCode = StatusCodes.Status404NotFound,
+        int successStatusCode = StatusCodes.Status200OK)
     {
         if (result.Success)
         {
-            return Ok(result.Data);
+            if (successStatusCode == StatusCodes.Status204NoContent)
+            {
+                return NoContent();
+            }
+
+            return StatusCode(successStatusCode, result.Data);
+        }
+
+        if (result.Error?.Contains("not found", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return StatusCode(notFoundStatusCode, new { message = result.Error });
         }
 
         if (result.Errors.Any())

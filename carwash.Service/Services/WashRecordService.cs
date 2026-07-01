@@ -19,11 +19,12 @@ public class WashRecordService : IWashRecordService
     public async Task<ServiceResult<WashRecordsListDto>> GetRecordsAsync(
         int year,
         int month,
+        int? day = null,
         string? userId = null,
         int? carId = null,
         int? washServiceId = null)
     {
-        var rangeResult = GetMonthRange(year, month);
+        var rangeResult = ResolveDateRange(year, month, day);
         if (!rangeResult.Success)
         {
             return ServiceResult<WashRecordsListDto>.Fail(rangeResult.Error!);
@@ -83,9 +84,9 @@ public class WashRecordService : IWashRecordService
         return ServiceResult<WashRecordsListDto>.Ok(response);
     }
 
-    public async Task<ServiceResult<WashRecordStatsDto>> GetMonthlyStatsAsync(int year, int month)
+    public async Task<ServiceResult<WashRecordStatsDto>> GetMonthlyStatsAsync(int year, int month, int? day = null)
     {
-        var rangeResult = GetMonthRange(year, month);
+        var rangeResult = ResolveDateRange(year, month, day);
         if (!rangeResult.Success)
         {
             return ServiceResult<WashRecordStatsDto>.Fail(rangeResult.Error!);
@@ -114,6 +115,7 @@ public class WashRecordService : IWashRecordService
         {
             Year = year,
             Month = month,
+            Day = day,
             TotalWashes = records.Count,
             FreeWashes = records.Count(r => r.PointsChange < 0),
             UniqueCars = records.Select(r => r.CarId).Distinct().Count(),
@@ -122,6 +124,44 @@ public class WashRecordService : IWashRecordService
         };
 
         return ServiceResult<WashRecordStatsDto>.Ok(stats);
+    }
+
+    private static ServiceResult<(DateTime From, DateTime To)> ResolveDateRange(int year, int month, int? day)
+    {
+        if (day.HasValue)
+        {
+            return GetDayRange(year, month, day.Value);
+        }
+
+        return GetMonthRange(year, month);
+    }
+
+    private static ServiceResult<(DateTime From, DateTime To)> GetDayRange(int year, int month, int day)
+    {
+        if (year < 2000 || year > 9999)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid year.");
+        }
+
+        if (month is < 1 or > 12)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid month.");
+        }
+
+        if (day is < 1 or > 31)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid day.");
+        }
+
+        try
+        {
+            var from = new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc);
+            return ServiceResult<(DateTime, DateTime)>.Ok((from, from.AddDays(1)));
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            return ServiceResult<(DateTime, DateTime)>.Fail("Invalid date.");
+        }
     }
 
     private static ServiceResult<(DateTime From, DateTime To)> GetMonthRange(int year, int month)

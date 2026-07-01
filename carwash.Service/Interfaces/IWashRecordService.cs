@@ -8,9 +8,10 @@ public interface IWashRecordService
     Task<ServiceResult<WashRecordsListDto>> GetRecordsAsync(
         int year,
         int month,
+        int? day = null,
         string? userId = null,
         int? carId = null,
         int? washServiceId = null);
 
-    Task<ServiceResult<WashRecordStatsDto>> GetMonthlyStatsAsync(int year, int month);
+    Task<ServiceResult<WashRecordStatsDto>> GetMonthlyStatsAsync(int year, int month, int? day = null);
 }
