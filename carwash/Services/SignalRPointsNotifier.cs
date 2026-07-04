@@ -1,4 +1,5 @@
 using carwash.Hubs;
+using carwash.Service.DTOs.Notifications;
 using carwash.Service.DTOs.Points;
 using carwash.Service.Interfaces;
 using Microsoft.AspNetCore.SignalR;
@@ -19,5 +20,12 @@ public class SignalRPointsNotifier : IPointsNotifier
         return _hubContext.Clients
             .Group(PointsHub.GetUserGroup(userId))
             .SendAsync("PointsUpdated", update);
+    }
+
+    public Task NotifyCampaignNotificationAsync(string userId, CampaignNotificationDto notification)
+    {
+        return _hubContext.Clients
+            .Group(PointsHub.GetUserGroup(userId))
+            .SendAsync("CampaignNotification", notification);
     }
 }

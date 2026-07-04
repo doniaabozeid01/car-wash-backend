@@ -33,6 +33,13 @@ public class PointsController : ControllerBase
         return ToActionResult(result, StatusCodes.Status404NotFound);
     }
 
+    [HttpPost("apply-manual")]
+    public async Task<IActionResult> ApplyManualPoints([FromBody] ApplyManualPointsRequest request)
+    {
+        var result = await _pointsService.ApplyManualPointsAsync(request);
+        return ToActionResult(result, StatusCodes.Status404NotFound);
+    }
+
     private IActionResult ToActionResult<T>(ServiceResult<T> result, int notFoundStatusCode)
     {
         if (result.Success)

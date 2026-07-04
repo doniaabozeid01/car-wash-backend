@@ -624,7 +624,14 @@
           }
         }
       },
-      "System.Formats.Asn1/8.0.1": {},
+      "System.Formats.Asn1/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/8.3.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.3.0",
@@ -750,10 +757,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11"
         },
         "runtime": {
-          "carwash.Data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "carwash.Data.dll": {}
         }
       },
       "carwash.Service/1.0.0": {
@@ -764,10 +768,7 @@
           "carwash.Data": "1.0.0"
         },
         "runtime": {
-          "carwash.Service.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "carwash.Service.dll": {}
         }
       }
     }

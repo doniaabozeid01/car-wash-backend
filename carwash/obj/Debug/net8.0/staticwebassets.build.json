@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "PKPjw8fWUyiSH5b9CQkcQpfiwhMfyifNlJb0eg6Pudk=",
+  "Hash": "6HzgoxTgLZr1cByP6pgwSrZ1EB6Bzmb6SyGVxcD55Do=",
   "Source": "carwash",
   "BasePath": "_content/carwash",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

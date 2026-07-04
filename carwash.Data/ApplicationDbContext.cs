@@ -14,6 +14,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<UserCar> UserCars => Set<UserCar>();
     public DbSet<WashService> WashServices => Set<WashService>();
     public DbSet<WashRecord> WashRecords => Set<WashRecord>();
+    public DbSet<PointsCampaign> PointsCampaigns => Set<PointsCampaign>();
+    public DbSet<UserCampaignReceipt> UserCampaignReceipts => Set<UserCampaignReceipt>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -71,6 +73,34 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             entity.HasIndex(r => r.CreatedAt);
             entity.HasIndex(r => new { r.UserId, r.CreatedAt });
             entity.HasIndex(r => new { r.CarId, r.CreatedAt });
+        });
+
+        builder.Entity<PointsCampaign>(entity =>
+        {
+            entity.Property(c => c.Title).HasMaxLength(200).IsRequired();
+            entity.Property(c => c.Message).HasMaxLength(1000).IsRequired();
+            entity.HasIndex(c => c.CreatedAt);
+
+            entity.HasOne(c => c.CreatedByCashier)
+                .WithMany()
+                .HasForeignKey(c => c.CreatedByCashierId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        builder.Entity<UserCampaignReceipt>(entity =>
+        {
+            entity.HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(r => r.Campaign)
+                .WithMany(c => c.Receipts)
+                .HasForeignKey(r => r.CampaignId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(r => new { r.UserId, r.CampaignId }).IsUnique();
+            entity.HasIndex(r => new { r.UserId, r.IsRead });
         });
     }
 }

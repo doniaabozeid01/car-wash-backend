@@ -242,6 +242,78 @@ namespace carwash.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("carwash.Data.Entities.PointsCampaign", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedByCashierId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int>("PointsAmount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("CreatedByCashierId");
+
+                    b.ToTable("PointsCampaigns");
+                });
+
+            modelBuilder.Entity("carwash.Data.Entities.UserCampaignReceipt", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CampaignId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PointsAdded")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ReadAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CampaignId");
+
+                    b.HasIndex("UserId", "CampaignId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId", "IsRead");
+
+                    b.ToTable("UserCampaignReceipts");
+                });
+
             modelBuilder.Entity("carwash.Data.Entities.UserCar", b =>
                 {
                     b.Property<int>("Id")
@@ -461,6 +533,36 @@ namespace carwash.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("carwash.Data.Entities.PointsCampaign", b =>
+                {
+                    b.HasOne("carwash.Data.Entities.ApplicationUser", "CreatedByCashier")
+                        .WithMany()
+                        .HasForeignKey("CreatedByCashierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CreatedByCashier");
+                });
+
+            modelBuilder.Entity("carwash.Data.Entities.UserCampaignReceipt", b =>
+                {
+                    b.HasOne("carwash.Data.Entities.PointsCampaign", "Campaign")
+                        .WithMany("Receipts")
+                        .HasForeignKey("CampaignId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("carwash.Data.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Campaign");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("carwash.Data.Entities.UserCar", b =>
                 {
                     b.HasOne("carwash.Data.Entities.ApplicationUser", "User")
@@ -475,6 +577,11 @@ namespace carwash.Data.Migrations
             modelBuilder.Entity("carwash.Data.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("Cars");
+                });
+
+            modelBuilder.Entity("carwash.Data.Entities.PointsCampaign", b =>
+                {
+                    b.Navigation("Receipts");
                 });
 #pragma warning restore 612, 618
         }

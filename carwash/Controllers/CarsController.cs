@@ -35,7 +35,7 @@ public class CarsController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = Roles.Cashier)]
+    //[Authorize(Roles = Roles.Cashier)]
     public async Task<IActionResult> Create([FromBody] CreateUserCarRequest request)
     {
         var result = await _userCarService.CreateAsync(request);

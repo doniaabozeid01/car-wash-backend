@@ -124,6 +124,88 @@ public class PointsService : IPointsService
         return ServiceResult<ScannedUserDto>.Ok(await MapToDtoAsync(user));
     }
 
+    public async Task<ServiceResult<ScannedUserDto>> ApplyManualPointsAsync(ApplyManualPointsRequest request)
+    {
+        if (request.Points == 0)
+        {
+            return ServiceResult<ScannedUserDto>.Fail("Points cannot be zero.");
+        }
+
+        var user = await FindCustomerByIdAsync(request.UserId);
+        if (user is null)
+        {
+            return ServiceResult<ScannedUserDto>.Fail("User not found.");
+        }
+
+        var car = await _dbContext.UserCars
+            .FirstOrDefaultAsync(c => c.Id == request.CarId && c.UserId == user.Id);
+        if (car is null)
+        {
+            return ServiceResult<ScannedUserDto>.Fail("Car not found.");
+        }
+
+        var change = request.Points;
+
+        if (change < 0 && car.Points + change < 0)
+        {
+            var required = Math.Abs(change);
+            var remaining = required - car.Points;
+            return ServiceResult<ScannedUserDto>.Fail(
+                $"Insufficient points. You still need {remaining} more points to deduct {required} points.");
+        }
+
+        decimal amountPaid = 0;
+        PaymentMethod? paymentMethod = null;
+
+        if (request.AmountPaid > 0)
+        {
+            if (request.PaymentMethod is null)
+            {
+                return ServiceResult<ScannedUserDto>.Fail("Payment method is required when amount paid is provided.");
+            }
+
+            amountPaid = request.AmountPaid;
+            paymentMethod = request.PaymentMethod;
+        }
+
+        const string serviceNameAr = "تعديل يدوي";
+        const string serviceNameEn = "Manual Adjustment";
+
+        car.Points += change;
+
+        _dbContext.WashRecords.Add(new WashRecord
+        {
+            UserId = user.Id,
+            UserFullName = user.FullName,
+            CarId = car.Id,
+            PlateNumber = car.PlateNumber,
+            CarType = car.CarType,
+            CarSize = car.Size,
+            WashServiceId = 0,
+            ServiceNameAr = serviceNameAr,
+            ServiceNameEn = serviceNameEn,
+            PointsChange = change,
+            CarPointsAfter = car.Points,
+            AmountPaid = amountPaid,
+            PaymentMethod = paymentMethod,
+            CreatedAt = DateTime.UtcNow
+        });
+
+        await _dbContext.SaveChangesAsync();
+
+        await _pointsNotifier.NotifyPointsUpdatedAsync(user.Id, new PointsUpdatedDto
+        {
+            CarId = car.Id,
+            PlateNumber = car.PlateNumber,
+            Points = car.Points,
+            Change = change,
+            ServiceNameAr = serviceNameAr,
+            ServiceNameEn = serviceNameEn
+        });
+
+        return ServiceResult<ScannedUserDto>.Ok(await MapToDtoAsync(user));
+    }
+
     private async Task<ApplicationUser?> FindCustomerByQrCodeAsync(string qrCode)
     {
         if (string.IsNullOrWhiteSpace(qrCode))
@@ -134,6 +216,28 @@ public class PointsService : IPointsService
         var user = await _userManager.Users
             .FirstOrDefaultAsync(u => u.QrCode == qrCode);
 
+        if (user is null)
+        {
+            return null;
+        }
+
+        var roles = await _userManager.GetRolesAsync(user);
+        if (!roles.Contains(Roles.User))
+        {
+            return null;
+        }
+
+        return user;
+    }
+
+    private async Task<ApplicationUser?> FindCustomerByIdAsync(string userId)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return null;
+        }
+
+        var user = await _userManager.FindByIdAsync(userId);
         if (user is null)
         {
             return null;

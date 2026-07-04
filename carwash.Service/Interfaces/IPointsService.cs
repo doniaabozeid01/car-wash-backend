@@ -7,4 +7,5 @@ public interface IPointsService
 {
     Task<ServiceResult<ScannedUserDto>> GetUserByQrCodeAsync(string qrCode);
     Task<ServiceResult<ScannedUserDto>> ApplyPointsAsync(ApplyPointsRequest request);
+    Task<ServiceResult<ScannedUserDto>> ApplyManualPointsAsync(ApplyManualPointsRequest request);
 }
