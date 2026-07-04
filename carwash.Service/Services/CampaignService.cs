@@ -111,11 +111,11 @@ public class CampaignService : ICampaignService
         await _dbContext.SaveChangesAsync();
         await transaction.CommitAsync();
 
-        var campaignNotifiedUsers = new HashSet<string>();
+        var notifyTasks = new List<Task>();
 
-        foreach (var (userId, car, receipt) in pointsUpdates)
+        foreach (var (userId, car, _) in pointsUpdates)
         {
-            await _pointsNotifier.NotifyPointsUpdatedAsync(userId, new PointsUpdatedDto
+            notifyTasks.Add(_pointsNotifier.NotifyPointsUpdatedAsync(userId, new PointsUpdatedDto
             {
                 CarId = car.Id,
                 PlateNumber = car.PlateNumber,
@@ -123,30 +123,21 @@ public class CampaignService : ICampaignService
                 Change = request.Points,
                 ServiceNameAr = title,
                 ServiceNameEn = title
-            });
-
-            if (campaignNotifiedUsers.Add(userId))
-            {
-                await _pointsNotifier.NotifyCampaignNotificationAsync(userId, new CampaignNotificationDto
-                {
-                    ReceiptId = receipt.Id,
-                    Title = title,
-                    Message = message,
-                    Points = request.Points
-                });
-            }
+            }));
         }
 
-        foreach (var receipt in receipts.Where(r => !campaignNotifiedUsers.Contains(r.UserId)))
+        foreach (var receipt in receipts)
         {
-            await _pointsNotifier.NotifyCampaignNotificationAsync(receipt.UserId, new CampaignNotificationDto
+            notifyTasks.Add(_pointsNotifier.NotifyCampaignNotificationAsync(receipt.UserId, new CampaignNotificationDto
             {
                 ReceiptId = receipt.Id,
                 Title = title,
                 Message = message,
                 Points = request.Points
-            });
+            }));
         }
+
+        await Task.WhenAll(notifyTasks);
 
         return ServiceResult<BroadcastCampaignResponse>.Ok(new BroadcastCampaignResponse
         {
