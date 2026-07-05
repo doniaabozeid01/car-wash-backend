@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "awBy8IBJ7F+Nl8aIFTweC+/NUVRH/3CEBDRBQLOu753gnhS+fPU05tTyuVxaur0EOAuJ09QkUQwH5L7iZjwIvA==",
+  "dgSpecHash": "qdSiVFn+nj8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\pc\\faculty\\full-car\\backend\\car-wash-backend\\carwash\\carwash.csproj",
+  "projectFilePath": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash\\carwash.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

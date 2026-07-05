@@ -52,6 +52,30 @@ public class CampaignService : ICampaignService
             select user.Id
         ).ToListAsync();
 
+        if (request.UserIds is { Count: > 0 })
+        {
+            var requestedIds = request.UserIds
+                .Where(id => !string.IsNullOrWhiteSpace(id))
+                .Select(id => id.Trim())
+                .Distinct(StringComparer.Ordinal)
+                .ToList();
+
+            if (requestedIds.Count == 0)
+            {
+                return ServiceResult<BroadcastCampaignResponse>.Fail("At least one valid user ID is required.");
+            }
+
+            var customerIdSet = customerIds.ToHashSet(StringComparer.Ordinal);
+            var invalidIds = requestedIds.Where(id => !customerIdSet.Contains(id)).ToList();
+            if (invalidIds.Count > 0)
+            {
+                return ServiceResult<BroadcastCampaignResponse>.Fail(
+                    $"Invalid customer ID(s): {string.Join(", ", invalidIds)}");
+            }
+
+            customerIds = requestedIds;
+        }
+
         if (customerIds.Count == 0)
         {
             return ServiceResult<BroadcastCampaignResponse>.Fail("No customers found to notify.");

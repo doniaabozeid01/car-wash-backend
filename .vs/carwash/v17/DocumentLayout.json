@@ -125,7 +125,7 @@
               "RelativeDocumentMoniker": "carwash.Service\\Services\\UserService.cs",
               "ToolTip": "E:\\Full car\\car-wash-backend\\car-wash-backend\\carwash.Service\\Services\\UserService.cs",
               "RelativeToolTip": "carwash.Service\\Services\\UserService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAIAwwBsAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAIAwwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-01T16:45:14.665Z",
               "EditorCaption": ""
@@ -140,8 +140,7 @@
               "RelativeToolTip": "carwash.Data\\Entities\\CarSize.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T15:29:47.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-01T15:29:47.477Z"
             },
             {
               "$type": "Document",
@@ -165,8 +164,7 @@
               "RelativeToolTip": "carwash\\Controllers\\UsersController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwBsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T15:29:24.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-01T15:29:24.744Z"
             },
             {
               "$type": "Document",

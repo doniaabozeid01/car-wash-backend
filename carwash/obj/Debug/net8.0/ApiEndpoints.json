@@ -42,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "carwash.Controllers.CampaignsController",
+    "Method": "Broadcast",
+    "RelativePath": "api/campaigns/broadcast",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "carwash.Service.DTOs.Campaigns.BroadcastCampaignRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "carwash.Controllers.CarsController",
     "Method": "GetAll",
     "RelativePath": "api/Cars",
@@ -137,6 +153,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "carwash.Controllers.NotificationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/notifications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "carwash.Controllers.NotificationsController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/notifications/{id}/read",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "carwash.Controllers.NotificationsController",
+    "Method": "GetUnread",
+    "RelativePath": "api/notifications/unread",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "carwash.Controllers.PointsController",
     "Method": "ApplyPoints",
     "RelativePath": "api/Points/apply",
@@ -147,6 +199,22 @@
       {
         "Name": "request",
         "Type": "carwash.Service.DTOs.Points.ApplyPointsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "carwash.Controllers.PointsController",
+    "Method": "ApplyManualPoints",
+    "RelativePath": "api/Points/apply-manual",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "carwash.Service.DTOs.Points.ApplyManualPointsRequest",
         "IsRequired": true
       }
     ],
