@@ -312,7 +312,6 @@ E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\refint\ca
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.pdb
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.genruntimeconfig.cache
 E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\ref\carwash.dll
-E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\bin\Debug\net8.0\appsettings.json
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\bin\Debug\net8.0\carwash.exe
@@ -469,3 +468,4 @@ C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\obj\Debug\net8.0\r
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.pdb
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\obj\Debug\net8.0\carwash.genruntimeconfig.cache
 C:\Users\pc\faculty\full-car\backend\car-wash-backend\carwash\obj\Debug\net8.0\ref\carwash.dll
+E:\Full car\car-wash-backend\car-wash-backend\carwash\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
