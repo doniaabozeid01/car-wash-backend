@@ -8,7 +8,7 @@ namespace carwash.Controllers;
 
 [ApiController]
 [Route("api/wash-records")]
-[Authorize(Roles = Roles.Cashier)]
+[Authorize(Roles = Roles.Staff)]
 public class WashRecordsController : ControllerBase
 {
     private readonly IWashRecordService _washRecordService;
@@ -25,9 +25,11 @@ public class WashRecordsController : ControllerBase
         [FromQuery] int? day = null,
         [FromQuery] string? userId = null,
         [FromQuery] int? carId = null,
-        [FromQuery] int? washServiceId = null)
+        [FromQuery] int? washServiceId = null,
+        [FromQuery] bool freeOnly = false)
     {
-        var result = await _washRecordService.GetRecordsAsync(year, month, day, userId, carId, washServiceId);
+        var result = await _washRecordService.GetRecordsAsync(
+            year, month, day, userId, carId, washServiceId, freeOnly);
         return ToActionResult(result);
     }
 

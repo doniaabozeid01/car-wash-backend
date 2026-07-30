@@ -11,7 +11,8 @@ public interface IWashRecordService
         int? day = null,
         string? userId = null,
         int? carId = null,
-        int? washServiceId = null);
+        int? washServiceId = null,
+        bool freeOnly = false);
 
     Task<ServiceResult<WashRecordStatsDto>> GetMonthlyStatsAsync(int year, int month, int? day = null);
 }

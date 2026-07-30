@@ -27,7 +27,7 @@ public class CarsController : ControllerBase
     }
 
     [HttpGet("{id:int}")]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Staff)]
     public async Task<IActionResult> GetById(int id, [FromQuery] string userId)
     {
         var result = await _userCarService.GetByIdAsync(userId, id);
@@ -35,7 +35,7 @@ public class CarsController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = Roles.Cashier)]
+    //[Authorize(Roles = Roles.Staff)]
     public async Task<IActionResult> Create([FromBody] CreateUserCarRequest request)
     {
         var result = await _userCarService.CreateAsync(request);
@@ -43,7 +43,7 @@ public class CarsController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateUserCarRequest request)
     {
         var result = await _userCarService.UpdateAsync(id, request);
@@ -51,7 +51,7 @@ public class CarsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> Delete(int id, [FromQuery] string userId)
     {
         var result = await _userCarService.DeleteAsync(userId, id);

@@ -29,12 +29,13 @@ public class UserService : IUserService
         var hasDateFilter = year.HasValue || month.HasValue || day.HasValue;
 
         var customers = await _userManager.GetUsersInRoleAsync(Roles.User);
-        var cashierIds = (await _userManager.GetUsersInRoleAsync(Roles.Cashier))
+        var staffIds = (await _userManager.GetUsersInRoleAsync(Roles.Cashier))
             .Select(u => u.Id)
+            .Concat((await _userManager.GetUsersInRoleAsync(Roles.Admin)).Select(u => u.Id))
             .ToHashSet();
 
         IEnumerable<ApplicationUser> filtered = customers
-            .Where(u => !cashierIds.Contains(u.Id))
+            .Where(u => !staffIds.Contains(u.Id))
             .Where(u => !string.IsNullOrEmpty(u.QrCode));
 
         if (activeOnly || hasDateFilter)

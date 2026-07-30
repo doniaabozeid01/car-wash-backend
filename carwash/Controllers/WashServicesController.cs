@@ -35,7 +35,7 @@ public class WashServicesController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Staff)]
     public async Task<IActionResult> Create([FromBody] CreateWashServiceRequest request)
     {
         var result = await _washServicesService.CreateAsync(request);
@@ -43,7 +43,7 @@ public class WashServicesController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateWashServiceRequest request)
     {
         var result = await _washServicesService.UpdateAsync(id, request);
@@ -51,7 +51,7 @@ public class WashServicesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    [Authorize(Roles = Roles.Cashier)]
+    [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> Delete(int id)
     {
         var result = await _washServicesService.DeleteAsync(id);

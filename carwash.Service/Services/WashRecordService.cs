@@ -22,7 +22,8 @@ public class WashRecordService : IWashRecordService
         int? day = null,
         string? userId = null,
         int? carId = null,
-        int? washServiceId = null)
+        int? washServiceId = null,
+        bool freeOnly = false)
     {
         var rangeResult = ResolveDateRange(year, month, day);
         if (!rangeResult.Success)
@@ -49,6 +50,11 @@ public class WashRecordService : IWashRecordService
         if (washServiceId is not null)
         {
             query = query.Where(r => r.WashServiceId == washServiceId);
+        }
+
+        if (freeOnly)
+        {
+            query = query.Where(r => r.PointsChange < 0);
         }
 
         var records = await query

@@ -10,7 +10,7 @@ namespace carwash.Controllers;
 
 [ApiController]
 [Route("api/campaigns")]
-[Authorize(Roles = Roles.Cashier)]
+[Authorize(Roles = Roles.Staff)]
 public class CampaignsController : ControllerBase
 {
     private readonly ICampaignService _campaignService;

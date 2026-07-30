@@ -9,7 +9,7 @@ namespace carwash.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = Roles.Cashier)]
+[Authorize(Roles = Roles.Staff)]
 public class PointsController : ControllerBase
 {
     private readonly IPointsService _pointsService;

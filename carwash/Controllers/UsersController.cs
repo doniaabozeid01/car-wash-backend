@@ -8,7 +8,7 @@ namespace carwash.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = Roles.Cashier)]
+[Authorize(Roles = Roles.Staff)]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -30,6 +30,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> Delete(string id)
     {
         var result = await _userService.DeleteCustomerAsync(id);

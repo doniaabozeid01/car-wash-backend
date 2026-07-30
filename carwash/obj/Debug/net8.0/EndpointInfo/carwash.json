@@ -509,6 +509,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "freeOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
